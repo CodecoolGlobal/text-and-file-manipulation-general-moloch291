@@ -1,0 +1,84 @@
+{
+  "employees": [
+    {
+      "firstName": "Rack",
+      "lastName": "Jackon",
+      "gender": "man",
+      "age": 24,
+      "address": {
+        "streetAddress": "126",
+        "city": "San Jone",
+        "state": "CA",
+        "postalCode": "394221"
+      },
+      "phoneNumbers": [
+        {
+          "type": "home",
+          "number": "7383627627"
+        },
+        {
+          "type": "mobile",
+          "number": "7788444321"
+        }
+      ]
+    },
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "gender": "man",
+      "age": 32,
+      "address": {
+        "streetAddress": "10",
+        "city": "San Diego",
+        "state": "CA",
+        "postalCode": "91913"
+      },
+      "phoneNumbers": [
+        {
+          "type": "mobile",
+          "number": "3383456629"
+        }
+      ]
+    },
+    {
+      "firstName": "Emma",
+      "lastName": "Fury",
+      "gender": "woman",
+      "age": 22,
+      "address": {
+        "streetAddress": "15",
+        "city": "Sherman Oaks",
+        "state": "CA",
+        "postalCode": "91413"
+      },
+      "phoneNumbers": [
+        {
+          "type": "mobile",
+          "number": "4582453428"
+        }
+      ]
+    },
+    {
+      "firstName": "Lisa",
+      "lastName": "Angle",
+      "gender": "woman",
+      "age": 43,
+      "address": {
+        "streetAddress": "145",
+        "city": "Ontario",
+        "state": "CA",
+        "postalCode": "91764"
+      },
+      "phoneNumbers": [
+        {
+          "type": "home",
+          "number": "3524447468"
+        },
+        {
+          "type": "mobile",
+          "number": "2338587132"
+        }
+      ]
+    }
+  ]
+}
