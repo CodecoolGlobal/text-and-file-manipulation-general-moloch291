@@ -5,25 +5,24 @@ start_collecting() {
 }
 
 finish_collecting() {
-    echo "$1 POST requests collected!"
+    echo "$1 POST requests collected from 'access.log'!"
 }
 
-read_file() {
-    POST_REQ_COUNTER=0
+get_post_reqs() {
+    POST_REQ_COUNT=0
+    grep POST access.log > post_reqs.log
     while read LINE; do
-        TYPE=$(echo "$LINE" | awk '{print $6}')
-        if [ "$TYPE" = '"POST' ]; then
-            echo "$(echo "$LINE" | awk -F'"' '$0=$2')"
-            POST_REQ_COUNTER=$(( POST_REQ_COUNTER + 1 ))
-        fi
-    done < access.log
-    echo "$POST_REQ_COUNTER"
+        echo "$(echo "$LINE" | awk -F'"' '$0=$2')"
+        POST_REQ_COUNT=$(( POST_REQ_COUNT + 1 ))
+    done < post_reqs.log
+    rm post_reqs.log
+    echo "$POST_REQ_COUNT"
 }
 
 main() {
     start_collecting
-    COUNT=$(read_file)
-    finish_collecting "$COUNT"
+    POST_COUNT=$(get_post_reqs)
+    finish_collecting "$POST_COUNT"
 }
 
 main
