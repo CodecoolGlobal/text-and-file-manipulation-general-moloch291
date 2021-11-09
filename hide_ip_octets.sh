@@ -10,8 +10,8 @@ inform_user_finish() {
 
 hiding_ips() {
     LINE_COUNTER=0;
-    while read line; do
-        NEW_LINE=$(echo "$line" | sed 's/[^.]\+/XXX/1; s/[^.]\+/XXX/2; s/[^.]\+/XXX/3;')
+    while read LINE; do
+        NEW_LINE=$(echo "$LINE" | sed 's/[^.]\+/XXX/1; s/[^.]\+/XXX/2; s/[^.]\+/XXX/3;')
         if [ $LINE_COUNTER -eq 0 ]; then
             echo "$NEW_LINE" > ips_hidden.log
         else
