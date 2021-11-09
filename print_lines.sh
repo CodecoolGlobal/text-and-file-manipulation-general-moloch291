@@ -11,7 +11,6 @@ print_lines() {
 }
 
 main() {
-    echo "Lines 11-20:"
     print_lines
 }
 
