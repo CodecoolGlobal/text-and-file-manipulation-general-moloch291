@@ -5,7 +5,7 @@ inform_user_start() {
 }
 
 inform_user_finish() {
-    echo 'Ips hidden in '$1' lines! Check: ips_hidden.log in pwd!'
+    echo 'Ips hidden in '$1' lines! New log file: ips_hidden.log in pwd!'
 }
 
 hiding_ips() {
@@ -17,7 +17,7 @@ hiding_ips() {
         else
             echo "$NEW_LINE" >> ips_hidden.log
         fi
-        LINE_COUNTER=$(( LINE_COUNTER+1 ))
+        LINE_COUNTER=$(( LINE_COUNTER + 1 ))
     done < access.log
     echo "$LINE_COUNTER"
 }
