@@ -12,7 +12,7 @@ extract_first_names_with_phone_number() {
     while [ $CURRENT_EMPLOYEE -le $(( LENGTH - 1 )) ]; do
         echo "\nEmployee number "$(( $CURRENT_EMPLOYEE + 1 ))":\nName:"
         jq '.employees | .['$CURRENT_EMPLOYEE'].firstName' employees.json
-        echo "Tel.:"
+        echo "Phone:"
         jq '.employees | .['$CURRENT_EMPLOYEE'].phoneNumbers | .[].number' employees.json
         CURRENT_EMPLOYEE=$(( CURRENT_EMPLOYEE + 1 ))
     done
