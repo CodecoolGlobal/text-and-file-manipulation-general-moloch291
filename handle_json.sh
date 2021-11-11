@@ -10,7 +10,7 @@ extract_first_names_with_phone_number() {
     LENGTH=$(jq '.employees | length' employees.json)
     CURRENT_EMPLOYEE=0
     while [ $CURRENT_EMPLOYEE -le $(( LENGTH - 1 )) ]; do
-        echo "\nEmployee number "$(($CURRENT_EMPLOYEE + 1))":\nName:"
+        echo "\nEmployee number "$(( $CURRENT_EMPLOYEE + 1 ))":\nName:"
         jq '.employees | .['$CURRENT_EMPLOYEE'].firstName' employees.json
         echo "Tel.:"
         jq '.employees | .['$CURRENT_EMPLOYEE'].phoneNumbers | .[].number' employees.json
@@ -20,7 +20,16 @@ extract_first_names_with_phone_number() {
 
 extract_first_name_and_cell_number() {
     # ToDo_: implement me!
-    echo "This function will extract names and only mobile numbers from employees.json!"
+    echo "\nNames and mobile:"
+    LENGTH=$(jq '.employees | length' employees.json)
+    CURRENT_EMPLOYEE=0
+    while [ $CURRENT_EMPLOYEE -le $(( LENGTH - 1 )) ]; do
+        echo "\nEmployee number "$(( $CURRENT_EMPLOYEE + 1 ))":\nName:"
+        jq '.employees | .['$CURRENT_EMPLOYEE'].firstName' employees.json
+        echo "Mobile:"
+        jq '.employees | .['$CURRENT_EMPLOYEE'].phoneNumbers | .[1].number' employees.json
+        CURRENT_EMPLOYEE=$(( CURRENT_EMPLOYEE + 1 ))
+    done
 }
 
 main() {
